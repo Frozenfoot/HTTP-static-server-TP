@@ -1,0 +1,3 @@
+/home/frozenfoot/CLionProjects/tp-http-server/CMakeFiles/rebuild_cache.dir
+/home/frozenfoot/CLionProjects/tp-http-server/CMakeFiles/untitled.dir
+/home/frozenfoot/CLionProjects/tp-http-server/CMakeFiles/edit_cache.dir

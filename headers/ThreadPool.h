@@ -10,7 +10,7 @@
 #include <pthread.h>
 #include "IThreadTask.h"
 
-#define DEFAULT_POOL_SIZE 4
+#define DEFAULT_POOL_SIZE 0
 #define MAX_NCPU 0
 #define DEFAULT_AFFINITY -1
 

@@ -5,12 +5,11 @@
 #include "../headers/ThreadPool.h"
 #include <unistd.h>
 #include <stdexcept>
-#include <bits/sigthread.h>
 #include <iostream>
 
 ThreadPool::ThreadPool(size_t size, int ncpu) {
     int totalCPU = (int) sysconf(_SC_NPROCESSORS_ONLN);
-    if((size <= 0) || (ncpu < -1)){
+    if((size < 0) || (ncpu < -1)){
         std::cout << "Invalid thread pool parameters" << std::endl;
         throw new std::runtime_error("Invalid thread pool parameters");
     }

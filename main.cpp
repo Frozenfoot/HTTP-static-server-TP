@@ -4,7 +4,7 @@
 
 #include "headers/Server.h"
 
-#define SERVER_PORT 80
+#define SERVER_PORT 8080
 
 int main(int argc, char* argv[]) {
     std::string rootPath;
@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
         std::cout << "Using default root" << std::endl;
     }
 
-    Server server(SERVER_PORT, rootPath, DEFAULT_POOL_SIZE, 4);
+    Server server(SERVER_PORT, rootPath, DEFAULT_POOL_SIZE, ncpu);
     server.start();
 
     return 0;
