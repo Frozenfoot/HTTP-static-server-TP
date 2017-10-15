@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
     }
 
     if(rootPath.length() == 0){
-        rootPath = "/var/www/html";
+        rootPath = "/var/www/html/http-test-suite/";
         std::cout << "Using default root" << std::endl;
     }
 

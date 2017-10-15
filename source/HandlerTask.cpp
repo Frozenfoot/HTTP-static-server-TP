@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <climits>
+#include <iostream>
 
 #define CHUNK 256
 
@@ -87,6 +88,7 @@ void HandlerTask::execute() {
     }
 
     ssize_t fileSize = statBuffer.st_size;
+//    std::cout << "File " << absolutePath << " Size: " << fileSize << std::endl;
     std::string mimeType = Http::getMimeType(fullPath);
     std::string date = Http::getDate();
     client->sendRawResponse(Http::makeResponseHead(STATUS_OK, date, mimeType, fileSize, "Closed").c_str());
@@ -97,10 +99,12 @@ void HandlerTask::execute() {
         long sentBytes;
 
         while((readBytes = read(file, fileBuffer, CHUNK)) > 0){
+//            std::cout << "File " << absolutePath << " Read bytes " << readBytes << std::endl;
             sentBytes = client->sendRawResponse(fileBuffer, readBytes);
-            if(sentBytes < readBytes){
-                break;
-            }
+//            if(sentBytes < readBytes){
+//                std::cout << "Error sending file " << fullPath << std::endl;
+//                break;
+//            }
         }
     }
 

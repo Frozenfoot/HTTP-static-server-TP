@@ -54,8 +54,6 @@ void Http::parseRequest(const std::string &request, std::string &method, std::st
         }
         ++i;
     }
-
-    std::cout << "Request:" << request << "--------\nMethod:" << method << "--------------\nPath:" << path;
 }
 
 std::string Http::makeResponseHead(const std::string &status, const std::string &date, const std::string contentType,
@@ -153,7 +151,6 @@ std::string Http::getDate() {
 
     sprintf(buffer, "%s, %d %s %d %d:%d:%d %s", weekDay.c_str(), time.tm_mday, month.c_str(), time.tm_year+1990, time.tm_hour, time.tm_min,
             time.tm_sec, time.tm_zone);
-    std::cout << ("%s, %d %s %d %d:%d:%d %s", weekDay.c_str(), time.tm_mday, month.c_str(), time.tm_hour, time.tm_min, time.tm_sec, time.tm_zone);
     std::string result = buffer;
     delete buffer;
     return result;
